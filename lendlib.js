@@ -1,4 +1,7 @@
+Lists = new Mongo.Collection("lists");
+
 if (Meteor.isClient) {
+  /*
   // counter starts at 0
   Session.setDefault('counter', 0);
 
@@ -12,6 +15,12 @@ if (Meteor.isClient) {
     'click button': function () {
       // increment the counter when button is clicked
       Session.set('counter', Session.get('counter') + 1);
+    }
+  });
+  */
+  Template.categories.helpers({
+    lists: function(){
+      return Lists.find({}, {sort: {Category: 1}});
     }
   });
 }
