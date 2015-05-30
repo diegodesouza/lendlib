@@ -11,9 +11,17 @@
 </body>
 
 <template name="categories">
-  <div id="categories">
-    {{#each lists}}
-    <div class="category">
+  <h2>My Stuff</h2>
+  <div id="categories" class="btn-group">
+    {{#if new_cat}}
+      <div class="category">
+        <input type="text" id="add-category" value=""/>
+      </div>
+    {{else}}
+      <div class="category btn btn-inverse" id="btnNewCat">+</div>
+    {{/if}}
+    {{#each classification}}
+    <div class="category btn btn-inverse">
       {{Category}}
     </div>
     {{/each}}
