@@ -1,5 +1,5 @@
 Template.categories.helpers({
-  classification: function(){
+  categories: function(){
     return Lists.find({}, {sort: {Category: 1}});
   },
 
@@ -24,6 +24,9 @@ Template.categories.events({
         Session.set('adding_category', false);
       }
     }
+  },
+  'click': function(event, template) {
+      Session.set('adding_category', false);
   }
 });
 
