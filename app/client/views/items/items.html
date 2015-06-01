@@ -1,0 +1,22 @@
+<template name="item">
+  <ul id="lending_list">
+    {{#each items}}
+    <li class="lending_item alert">
+      <button type="button" class="close delete_item" id="{{Name}}">×</button>
+      {{Name}}
+      {{#if lendee_editing}}
+        <input type="text" id="edit_lendee" class="span2pull-right" value=""/>
+      {{else}}
+        <div class="lendee pull-right label {{LendClass}}">{{Lendee}}</div>
+      {{/if}}
+    </li>
+    {{/each}}
+    {{#if list_selected}}
+    <li class="alert-success" id="btnAddItem">&plus;
+      {{#if item_adding}}
+        <input class="span4" id="item_to_add" size="32" type="text">
+      {{/if}}
+    </li>
+    {{/if}}
+  </ul>
+</template>
