@@ -9,7 +9,7 @@
       <div class="category btn btn-inverse" id="btnNewCat">&plus;</div>
     {{/if}}
     {{#each categories}}
-    <div class="category btn btn-inverse">
+    <div class="category btn {{list_status}}" id="{{_id}}">
       {{Category}}
     </div>
     {{/each}}

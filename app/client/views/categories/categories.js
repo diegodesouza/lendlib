@@ -27,6 +27,15 @@ Template.categories.events({
   },
   'focusout #add-category': function() {
       Session.set('adding_category', false);
+  },
+  'list_status': function() {
+    if (Session.equals('current_list', this._id))
+      return "";
+    else
+      return " btn-inverse";
+  },
+  'click .category': function() {
+    Session.set('current_list', this._id);
   }
 });
 
