@@ -25,7 +25,7 @@ Template.categories.events({
       }
     }
   },
-  'click': function(event, template) {
+  'focusout #add-category': function() {
       Session.set('adding_category', false);
   }
 });
