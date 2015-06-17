@@ -1,5 +1,5 @@
 Template.categories.helpers({
-  categories: function(){
+  lists: function(){
     return Lists.find({}, {sort: {Category: 1}});
   },
 

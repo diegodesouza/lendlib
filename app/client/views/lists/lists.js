@@ -1,5 +1,5 @@
-Template.item.helpers ({
-  'items': function() {
+Template.list.helpers ({
+  'lists': function() {
     if (Session.equals('current_list',null))
       return null;
     else
@@ -56,7 +56,7 @@ Template.item.helpers ({
 });
 
 
-Template.item.events({
+Template.list.events({
   'click #btnAddItem': function (e,t){
     Session.set('list_adding',true);
     Meteor.flush();
@@ -92,3 +92,8 @@ Template.item.events({
      // }
  // }
 });
+
+function focusText(i) {
+  i.focus();
+  i.select();
+};
